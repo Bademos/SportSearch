@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>My review</h1>
+
+    {% if review_list %}
+    <ul>
+      {% for review in review_list %}
+      <li>
+        <a href="{% url 'review-detail' review.pk %}">{{review.id}}</a> ({{ review.comment }})
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>There are no review for {{ user.get_username }}</p>
+    {% endif %}
+    <a href="{% url 'review_create' %}">Create review</a> 
+
+{% endblock %}

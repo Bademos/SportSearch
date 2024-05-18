@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>My review</h1>
+
+    {% if complaint_list %}
+    <ul>
+      {% for complaint in complaint_list %}
+      <li>
+        <a href="{% url 'complaint-detail' complaint.pk %}">{{complaint}}</a> ({{ complaint.comment }})
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>There are no complaints of {{ user.get_username }}</p>
+    {% endif %}
+{% endblock %}

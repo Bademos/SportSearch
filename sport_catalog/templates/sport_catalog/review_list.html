@@ -1,0 +1,27 @@
+{% extends "base_generic.html" %}
+{% block title %}
+
+
+<title> Reviews list</title>
+
+{% endblock %}
+{% block content %}
+    <h1>Reviews List</h1>
+
+    {% if review_list %}
+    <ul>
+
+      {% for event in review_list %}
+      <li>
+       <p> ID: <a href="{{ event.get_absolute_url }}"> {{ event.id }}</a> </p>
+        <p>Mark: {{ event.mark }} </p>
+        <p> Comment: {{ event.comment }} </p>
+
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no events</p>
+    {% endif %}
+{% endblock %}

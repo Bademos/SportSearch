@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+{% block content %}
+  
+  <h1>User: {{ sportuser.user.get_username }}</h1>
+
+  <p><strong>first_name:</strong> <a href="">{{ sportuser.first_name }}</a></p> 
+  <p><strong>last_name:</strong> <a href="">{{ sportuser.last_name }}</a></p> 
+  <p><strong>Sportsman;</strong> <a href="">{{ sportuser.isSportsMen }}</a></p> 
+  <p><strong>Manager:</strong> <a href="">{{ sportuser.isManager}}</a></p> 
+
+
+{% endblock %}

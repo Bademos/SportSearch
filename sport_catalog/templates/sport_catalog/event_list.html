@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+{% block title %}
+
+
+<title> Events list</title>
+
+{% endblock %}
+{% block content %}
+    <h1>Events List</h1>
+
+    {% if event_list %}
+    <ul>
+
+      {% for event in event_list %}
+      <li>
+        <a href="{{ event.get_absolute_url }}">{{ event.id }}</a> {{ event.sport_type }} ({{event.manager}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no events</p>
+    {% endif %}
+{% endblock %}

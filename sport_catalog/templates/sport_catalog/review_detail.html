@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+{% block content %}
+  
+  <h1>Event: {{ review.event.id }} {{ review.event.sport_type }}</h1>
+
+  <p><strong>Receiver:</strong> <a href="{{ review.receiver.get_absolute_url }}">{{ review.receiver.first_name }} {{ review.receiver.last_name }}</a></p> <!-- author detail link not yet defined -->
+  <p><strong>Sender:</strong> <a href="{{ review.sender.get_absolute_url }}">{{ review.sender.first_name }} {{ review.sender.last_name }}</a></p> <!-- author detail link not yet defined -->
+
+  <p><strong>Mark:</strong> {{ review.mark }}</p>
+  <p><strong>Comment:</strong> {{ review.comment }}</p>
+  <p><strong>Reply:</strong> {{ review.reply }}</p>
+
+
+
+
+{% endblock %}

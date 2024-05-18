@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Sportsmen List</h1>
+
+    {% if sportuser_list %}
+    <ul>
+
+      {% for sportsman in sportuser_list %}
+      <li>
+        <a href="{{ sportsman.get_absolute_url }}">{{ sportsman.first_name }} {{ sportsman.last_name }}</a>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no sportsmen.</p>
+    {% endif %}
+{% endblock %}
